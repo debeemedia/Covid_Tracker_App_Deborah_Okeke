@@ -80,8 +80,7 @@ const populateDom = async () => {
             card.append(cardImgDiv, cardBody)
 
             // add event listener to show and hide popup
-            cardImgDiv.addEventListener('click', () => showPopup(i))
-            cardCountry.addEventListener('click', () => showPopup(i))
+            card.addEventListener('click', () => showPopup(i))
 
             overlay.addEventListener('click', closePopup)
             closePopupBtn.addEventListener('click', closePopup)
@@ -114,22 +113,22 @@ const populateDom = async () => {
             const countryName = document.createElement('h3')
             countryName.innerText = countryDataName[index]
             const countryPopulation = document.createElement('p')
-            countryPopulation.innerText = `Population: ${countryDataPopulation[index]} people`
+            countryPopulation.innerHTML = `<b>Population:</b> ${countryDataPopulation[index]} people`
 
             countryInfoDiv.append(countryImgDiv, countryName, countryPopulation)
 
             const countryCasesDiv = document.createElement('div')
 
             const todayReportedCases = document.createElement('p')
-            todayReportedCases.innerText = `Today's Reported Cases: ${countryTodayReportedCases[index]} people`
+            todayReportedCases.innerHTML = `<b>Today's Reported Cases:</b> ${countryTodayReportedCases[index]} people`
             const todayConfirmedDeaths = document.createElement('p')
-            todayConfirmedDeaths.innerText = `Today's Confirmed Deaths: ${countryTodayConfirmedDeaths[index]} people`
+            todayConfirmedDeaths.innerHTML = `<b>Today's Confirmed Deaths:</b> ${countryTodayConfirmedDeaths[index]} people`
             const totalInfectedCases = document.createElement('p')
-            totalInfectedCases.innerText = `Total Infected Cases: ${countryTotalInfectedCases[index]} people`
+            totalInfectedCases.innerHTMML = `<b>Total Infected Cases:</b> ${countryTotalInfectedCases[index]} people`
             const totalRecoveredCases = document.createElement('p')
-            totalRecoveredCases.innerText = `Total Recovered Cases: ${countryTotalRecoveredCases[index]} people`
+            totalRecoveredCases.innerHTML = `<b>Total Recovered Cases:</b> ${countryTotalRecoveredCases[index]} people`
             const totalConfirmedDeaths = document.createElement('p')
-            totalConfirmedDeaths.innerText = `Total Confirmed Deaths: ${countryTotalConfirmedDeaths[index]} people`
+            totalConfirmedDeaths.innerHTML = `<b>Total Confirmed Deaths:</b> ${countryTotalConfirmedDeaths[index]} people`
 
             countryCasesDiv.append(todayReportedCases, todayConfirmedDeaths, totalInfectedCases, totalRecoveredCases, totalConfirmedDeaths)
 
